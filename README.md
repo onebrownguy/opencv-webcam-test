@@ -10,6 +10,7 @@ It utilizes the **Haar Cascade classifier** for face detection.
 - Press **`q`** to exit
 
 ## Installation
+
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/YOUR-USERNAME/opencv-webcam-test.git
