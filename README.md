@@ -5,6 +5,12 @@ It utilizes the **Haar Cascade classifier** for face detection.
 
 ## Features
 - Captures live webcam feed
+- Detects **faces**, **eyes**, and **smiles** using Haar cascades
+- Draws bounding boxes:
+  - **Green** → Face
+  - **Blue** → Eyes
+  - **Red** → Smile
+- Displays **FPS (frames per second)*
 - Detects faces using Haar cascades
 - Draws bounding boxes around detected faces
 - Press **`q`** to exit
@@ -16,3 +22,9 @@ It utilizes the **Haar Cascade classifier** for face detection.
    git clone https://github.com/YOUR-USERNAME/opencv-webcam-test.git
    cd opencv-webcam-test
 
+## Files Included
+- **`face_detection.py`** → Real-time face, eye, and smile detection script
+- **`haarcascade_frontalface_default.xml`** → Face detection model
+- **`haarcascade_eye.xml`** → Eye detection model
+- **`haarcascade_smile.xml`** → Smile detection model
+- **`README.md`** → Documentation
