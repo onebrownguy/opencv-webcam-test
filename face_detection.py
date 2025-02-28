@@ -1,5 +1,5 @@
 import cv2
-
+import time
 # Load the Haar Cascade classifier
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
@@ -10,6 +10,8 @@ if not cap.isOpened():
     print("Error: Could not open webcam.")
 else:
     while True:
+        start_time = time.time()  # Track start time
+        
         ret, frame = cap.read()
         if not ret:
             break
@@ -24,6 +26,14 @@ else:
         # Draw rectangles around detected faces
         for (x, y, w, h) in faces:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 3)
+
+        # Calculate FPS
+        end_time = time.time()
+        fps = 1 / (end_time - start_time)
+        fps_text = f"FPS: {fps:.2f}"
+
+        # Display FPS on screen
+        cv2.putText(frame, fps_text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
 
         # Display the webcam feed with face detection
         cv2.imshow("Face Detection", frame)
